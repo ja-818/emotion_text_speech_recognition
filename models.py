@@ -16,7 +16,10 @@ def infere_text_emotion(text):
 
 # A function that uses the initialized audio classification model to predict the emotion of a given speech input
 def infere_speech_emotion(text):
-    return model_speech_emotion(text)[0]["label"]
+    # Dict that maps the speech model emotions with the text's ones
+    emotions_dict = {"angry": "Anger", "disgust": "Disgust", "fear": "Fear", "happy": "Joy", "neutral": "Neutral", "sad": "Sadness"}
+    inference = model_speech_emotion(text)[0]["label"]
+    return emotions_dict[inference]
 
 # A function that uses the initialized automatic speech recognition model to convert speech (as an audio file) to text
 def infere_voice2text(audio_file):

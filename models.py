@@ -19,5 +19,5 @@ def infere_speech_emotion(text):
     return model_speech_emotion(text)[0]["label"]
 
 # A function that uses the initialized automatic speech recognition model to convert speech (as an audio file) to text
-def infere_text_to_voice(audio_file):
+def infere_voice2text(audio_file):
     return model_voice2text(audio_file)["text"]
